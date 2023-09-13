@@ -9,8 +9,8 @@ ga_tracking_code: UA-79667939-4
 p2pu_ga_tracking_code: UA-55722824-1
 
 # for edit this page
-git_address: http://github.com/uclalibrary/foundations
-git_edit_address: http://github.com/uclalibrary/foundations/blob/gh-pages
+git_address: http://github.com/ucsdlib/foundations
+git_edit_address: http://github.com/ucsdlib/foundations/blob/gh-pages
 
 # Some files we need to exclude, so Github can build the site
 exclude: [Gemfile, Gemfile.lock, README.md]
