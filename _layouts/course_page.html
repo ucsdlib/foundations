@@ -1,0 +1,71 @@
+---
+layout: base
+---
+{% assign module=page.categories[1] %}
+<div class="clearfix">
+	{% include side_toolbar.html %}
+	<div class="col-md-9 background-white">
+		<div class="col-md-10 col-md-offset-1 col-lg-9 col-xl-offset-2">
+			<div class="row">
+				<div class="content col-lg-12">
+					{% if page.banner %}
+                        <img src="{{ page.banner | absolute_url }}" alt="{{ page.banner-alt }}" class="img-fluid">
+                    {% endif %}
+                    {{ content }}
+					{% include next_in_module.html %}
+				    <hr />
+                    <a target="_blank" href="{{site.git_edit_address}}/{{ page.path }}" class="btn btn-default githubEditButton" role="button">
+                <i class="fa fa-pencil fa-lg"></i> Improve this page</a>
+                    <hr />
+                    <!-- comments -->
+                    {% if page.comments %}
+                        <div id="disqus_thread"></div>
+                        <script>
+
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://learner-centered-design.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+                    {% endif %}
+                    <!-- end comments -->
+                    {% if prev or next %}
+                    <hr />
+					{% endif %}
+					{% if prev %}
+						<div class="pagination-section pull-left">
+							<div class="title">
+								Previous section:
+							</div>
+							<a rel="prev" class="prev" href="{{ site.baseurl }}{{ prev.url }}">
+								{{ prev.title }} </a>
+						</div>
+					{% endif %}
+					{% if next %}
+						<div class="pagination-section pull-right">
+							<div class="title">
+								Next section:
+							</div>
+							<a rel="next" class="next" href="{{ site.baseurl }}{{ next.url }}"> {{ next.title }}
+							</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- todo: add an "improve this page" feature -->

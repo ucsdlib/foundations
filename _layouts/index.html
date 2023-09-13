@@ -1,0 +1,55 @@
+---
+layout: base
+---
+
+<!-- Banner -->
+<div class="jumbotron">
+	<div class="container text-center">
+        {% if site.jumbotron_image %}
+			<img src="{{ site.jumbotron_image | absolute_url }}" class="img-fluid" style="width: 25%;"
+			     alt="A line drawing of a sunflower." />
+		{% endif %}
+		<header>
+			<h1 style="font-size: 45px;">{{ site.data.course.title }}</h1>
+                <p>{{ site.data.course.description }}</p>
+		</header>
+
+		<p>
+			<a class="btn btn-primary btn-lg"
+			   href="{{ site.baseurl }}/modules/start/welcome/">
+				Get Started </a>
+		</p>
+	</div>
+
+</div>
+<div class="container">
+	<div class="clearfix">
+		<div class="col-md-8 col-md-offset-2">
+			<section>
+				{{ content }}
+                <p class="text-right"><a class="btn btn-primary btn-sm"
+			   href="{{ site.baseurl }}/modules/start/welcome/">
+				Learn more... </a></p>
+			</section>
+		</div>
+	</div>
+</div>
+{% comment %}
+<section class="people clearfix light-section">
+	<div class="container">
+		<h2>Who else is here?</h2>
+		<hr />
+		<ul class="list-inline">
+			{% for user in site.data.course.signups %}
+				<li class="col-md-1">
+					<a href="https://twitter.com/{{ user.twitter }}"
+					   target="_blank"> <img
+							class="img-circle profile-picture"
+							src="{{ user.image }}"
+							alt="{{ user.name }}"> </a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+{% endcomment %}
