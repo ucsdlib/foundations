@@ -2,7 +2,7 @@
 
 > Launch a learner-centered design team and start making things together with this quick and practical mini-course.
 
-Website: [https://uclalibrary.github.io/foundations/](https://uclalibrary.github.io/foundations/)
+Website: [https://ucsdlib.github.io/foundations/](https://ucsdlib.github.io/foundations/)
 
 ## Overview
 
